@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application Architect Exercise Launcher</title>
+	<link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+<div class="slds-p-vertical_small header">
+	<img class="slds-m-vertical_small" src="images/th-academy-logo.png" alt="trailhead academy logo" width="200" />
+	<h1 class="slds-text-heading_large slds-m-top_medium uppercase">United Food Suppliers Scenario</h1>
+</div>
+<div class="slds-grid slds-wrap slds-grid_align-space slds-p-around_medium content slds-grid_vertical-stretch main">
+
+	<div class="slds-size_9-of-12 slds-box slds-p-horizontal_medium slds-m-bottom_xx-large slds-m-horizontal_medium tile slds-text-body_regular">
+		<h2 class="slds-text-heading_medium">Project Overview</h2>
+		<p>United Food Suppliers (UFS) has been in business about 50 years, supplying consumer goods and perishables to restaurants and small grocery stores. Recently, it has decided to start selling to individuals.</p>
+		<p>Six months ago, UFS has launched a CRM pilot based on the Salesforce.com CFA product. The pilot was launched to a small number of sales representatives and used minimal configuration updates. The pilot, while well-liked by the management, was not well received by the overall sales representative population. An analysis showed that the culture of the sales team was very secretive, with team members concerned that their sales opportunities would be taken advantage of by their coworkers. Additionally, sales representatives were not used to entering data, so filling out long forms was seen only as an overhead, with no clear benefit. Other departments (such as order fulfillment and sales management) were, however, delighted to have some insight into the pipeline, and UFS leadership decided to roll out CRM company-wide, for both Sales and Service.</p>
+		<h2 class="slds-text-heading_medium">Sales Processes</h2>
+		<h3 class="slds-text-heading_small">Onboarding New Customers</h3>
+		<p>UFS wants to make it easy to sign up new customers. Restaurants, small grocery stores, and now individuals should be able to start the sign-up process online, on a public web page. UFS is very conscious about its brand, and would like the look and feel to be consistent with its marketing materials.</p>
+		<p>Individuals (retail customers) can just sign up, and be automatically pre-approved.</p>
+		<p>Restaurants and small groceries (commercial customers) are assigned to a specific Sales Representative based on a zip code, and UFS would like to ensure that the Sales Representative places a call to welcome them to the network and to start building a relationship.</p>
+		<p>Both retail and commercial customers can optionally store credit card numbers in the system, for the ease of frequent orders. The full credit card number should not be visible to anybody other than Accounting, and the last 4 digits should only be visible to the Customer Support team.</p>
+		<h3 class="slds-text-heading_small">Sales Process</h3>
+		<p>UFS currently serves about 700K commercial customers and expects to have 3-5M retail customers within a year.</p>
+		<p>Sales Representatives spend a lot of their time on the road, visiting restaurants and talking to their owners. Sales Representatives are issued a smart phone, and are expected to enter information and log calls. In the pilot of the CRM, a common complaint was that the data entry forms are too long, and the navigation too confusing.</p>
+		<p>Now, with addition of retail customers, UFS is concerned that some of the fields are only applicable to (and/or required for) retail versus commercial customers, and the number of fields on the pages will make data entry overly complex.</p>
+		<p>Additionally, orders for commercial clients are often very similar to those in the past, making data entry from scratch too tedious. UFS is considering developing a custom screen for data entry, but would like to include it in both legacy (Visualforce) as well as new (Lightning) screens.</p>
+		<p>Sales Representatives need visibility into any support tickets, to know what is going on with the account, and to answer any questions that may come up. Sales Representatives sometimes team up on the accounts, and would like to be able to manually designate with whom they would like to share visibility into accounts and opportunities.</p>
+		<p>Commercial customers can achieve different tiers based on the total dollar amount of orders placed in the last 12 months. At the end of every month, a summary of all orders is calculated in the legacy ERP and loaded into the CRM system. When the data is updated, UFS would like a mechanism to automatically calculate the achieved tier, and determine discounts associated with that tier.</p>
+		<p>UFS needs to support complex tax structures for handling sales in multiple states. Currently tax calculations are very manual and tedious. UFS would also like to start accepting a variety of electronic payments.</p>
+		<p>Some commercial customers are not abiding by the agreements, and their accounts may be marked as suspended. If so, no new sales can be made to them until their status is cleared. When the sale is completed (Closed Won), UFS would like the data to be automatically transmitted to a legacy ERP system. During the pilot phase of the implementation, the ERP system was prepared to accept outbound messages from Salesforce.</p>
+		<h3 class="slds-text-heading_small">Sales Operations</h3>
+		<p>The Sales Operations group is responsible for two activities:</p>
+		<ul>
+			<li>Quarterly redefinition of sales regions. While Sales Managers at UFS are always responsible for the same Sales Representatives, each Sales Representative's sales region may change quarterly. UFS defines sales regions to contain all commercial accounts within certain zip codes, and rebalances sales regions each quarter. Sales Operations team members collaborate on creating optimal distribution, and may go through multiple models before finalizing.</li>
+			<li>Analysis of forecasted versus actual sales. Sales management wants to see forecasts that are based on opportunities in Salesforce, and how they correlate to orders in their ERP systems.</li>
+		</ul>
+		<h2 class="slds-text-heading_medium">Support Processes</h2>
+		<h3 class="slds-text-heading_small">Call Center</h3>
+		<p>There are two separate call centers for commercial and retail customers. Call center agents supporting retail customers can see all retail customers, but no commercial ones, while commercial call center agents can see only commercial clients.</p>
+		<p>Both call centers are responsible for support and sales. Call centers have experienced high turnover, so UFS would like to develop a wizard-like user experience when entering new cases to minimize training. Additionally, customers may have a lot of information associated with them (i.e., past history, orders, etc.), and the call center experience needs to accommodate that information.</p>
+		<p>Customers can report issues via email, text, SMS, chat, and voice calls. UFS would like advice on how to distribute these communications to call center agents, and some information about how chat and voice calls can integrate with the existing information, such as automatic lookup of Accounts, etc.</p>
+		<p>Call center agents need access to product information and other documentation, such as food storage requirements, perishable times, and measurements.</p>
+		<h3 class="slds-text-heading_small">Self Service</h3>
+		<p>UFS would like to provide their customers with self-service options. Examples include:</p>
+		<ul>
+			<li>The ability to file new support cases and view the status of previously entered ones.</li>
+			<li>Looking up information about products (dimensions, storage recommendations, etc.).</li>
+			<li>Looking up a summary of their past orders.</li>
+			<li>Commercial customers need to communicate directly with their sales representatives regarding the status of orders and any required modifications. For each commercial customer, there may be multiple employees that create and follow up on cases. Such customers need to be able to manage their own users, and to see each other's cases and data regardless of who in their company created the case.</li>
+			<li>Retail customers can only see their own information, and commercial customers can only see information for their company.</li>
+		</ul>
+		<h2 class="slds-text-heading_medium">Advanced Analytics</h2>
+		<p>UFS’s analytics team uses data in the new CRM application, as well as the existing ERP system to model buying behavior. The project needs to ensure that the analytics team has access to all data in CRM, regardless of other security settings.</p>
+		<p>UFS sells about a 1,000 different products. The analytics team has determined that there is a large opportunity in cross-selling, and has developed sophisticated algorithms to determine the propensity of each customer to buy a specific product. For every customer and product pairing, there is a “Propensity to Buy” score (1-100), an indicator whether customer already is buying this product, and a marketing blurb on how to position this product with the client. United Foods would like to expose this information to all of its sales reps.</p>
+		<p>Additionally, for each product, they would like to see the number of customers that currently don't buy a product, but have a very high propensity. Similarly, for each customer, they want to see the number of products they should be recommending.</p>
+		<p>Propensity to Buy is recalculated in an external system, and reloaded every night. UFS would like to understand how this data can be loaded into the new system.</p>
+	</div>
+
+</div>
+
+<div class="footer">
+	
+</div>
+</body>
+</html>
