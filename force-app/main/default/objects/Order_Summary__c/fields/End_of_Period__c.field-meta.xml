@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_of_Period__c</fullName>
+    <description>The ending of the time period this record summarizes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The ending of the time period this record summarizes.</inlineHelpText>
+    <label>End of Period</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

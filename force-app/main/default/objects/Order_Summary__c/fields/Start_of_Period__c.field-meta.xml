@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_of_Period__c</fullName>
+    <description>The beginning of the time period this record summarizes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The beginning of the time period this record summarizes.</inlineHelpText>
+    <label>Start of Period</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
